@@ -14,11 +14,6 @@ function hslColor(h, s, l) {
   return color;
 }
 
-
-
-
-
-
 /* TO DO */
 
 // 1. Select container element
@@ -26,3 +21,29 @@ function hslColor(h, s, l) {
 // 3. Select all shape divs
 // 4. Count how many there are
 // 5. Iterate over shape divs to change style
+
+for (var i = 0; i < 200; i++) {
+	//create a div 
+	var shape = document.createElement('div');
+	
+	//add class "shape" to div
+	shape.classList.add('shape');
+
+	// select container div
+	var container = document.querySelector('.content');
+
+	// add a div with a class "shape" to container div
+	container.append(shape);
+}
+
+// Select all divs w class "shape"
+var shapes = document.querySelectorAll('.shape');
+
+//Loop over all of the shapes
+shapes.forEach( function(shape, i) {
+	// what happens to each element
+	console.log(i);
+	var color = hslColor(i, 50, 50);
+	shape.style.background = color;
+
+});
