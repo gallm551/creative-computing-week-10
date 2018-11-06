@@ -22,7 +22,7 @@ function hslColor(h, s, l) {
 // 4. Count how many there are
 // 5. Iterate over shape divs to change style
 
-for (var i = 0; i < 200; i++) {
+for (var i = 0; i < 300; i++) {
 	//create a div 
 	var shape = document.createElement('div');
 	
@@ -43,7 +43,11 @@ var shapes = document.querySelectorAll('.shape');
 shapes.forEach( function(shape, i) {
 	// what happens to each element
 	console.log(i);
-	var color = hslColor(i, 50, 50);
+	var percentage = i / 200 * 100;
+
+	var color = hslColor(i + 130 / 3, percentage, percentage);
 	shape.style.background = color;
 
+	shape.style.width = i / 5 +'px';
+	shape.style.height = i / 5 + 'px';
 });
